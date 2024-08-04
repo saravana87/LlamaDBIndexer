@@ -1,0 +1,6 @@
+pip install llama-index python-dotenv
+pip install pymsql
+pip install llama-index-llms-openai
+pip install openai
+pip install llama-index-vector-stores-postgres
+%pip install llama-index-vector-stores
