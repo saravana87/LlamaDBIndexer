@@ -18,14 +18,14 @@ llm = OpenAI(model="gpt-4", temperature=0)
 @st.cache_resource
 def initialize_agent():
     # Load indexes and create query engines
-    storage_context_2025 = StorageContext.from_defaults(persist_dir="./cdi_2025_index")
-    pinson_query_engine_2025 = load_index_from_storage(storage_context_2025, index_id="cdi_2025_01").as_query_engine()
+    storage_context_2025 = StorageContext.from_defaults(persist_dir="./example_data1")
+    pinson_query_engine_2025 = load_index_from_storage(storage_context_2025, index_id="data_2025_01").as_query_engine()
 
-    storage_context_cdi = StorageContext.from_defaults(persist_dir="cdi_data_index")
-    cdi_query_engine = load_index_from_storage(storage_context_cdi, index_id="cdiplus_index").as_query_engine()
+    storage_context_cdi = StorageContext.from_defaults(persist_dir="./example_data2")
+    cdi_query_engine = load_index_from_storage(storage_context_cdi, index_id="example_data_02").as_query_engine()
 
-    storage_context_webinar = StorageContext.from_defaults(persist_dir="webinar_data_index")
-    webinar_query_engine = load_index_from_storage(storage_context_webinar, index_id="webinar_index").as_query_engine()
+    storage_context_webinar = StorageContext.from_defaults(persist_dir="example_data3")
+    webinar_query_engine = load_index_from_storage(storage_context_webinar, index_id="example_data_03").as_query_engine()
 
     return agent
 
