@@ -33,3 +33,14 @@ json_directory = "./json_files"
 # Load JSON and create an index
 index = load_and_index_json(json_directory)
 print("Indexing completed!")
+print(index)
+
+# Query the index
+def query_index(index, query):
+    response = index.as_query_engine()
+    return response.query(query)
+
+# Example usage: Querying the index
+user_query = "Explain respiratory disorders and its medical codes."
+response = query_index(index, user_query)
+print(f"Response: {response}")
